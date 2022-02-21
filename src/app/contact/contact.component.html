@@ -1,0 +1,35 @@
+<h2>Cadastrar novo contato</h2>
+<hr />
+<form action="">
+    <p>Nome: <input type="text" name="name" [(ngModel)]="contact.name" /></p>
+    <p>Phone: <input type="text" name="phone" [(ngModel)]="contact.phone" /></p>
+    <p><button (click)="createContact()">Criar</button></p>
+</form>
+
+<h2>Lista de Contatos</h2>
+<hr />
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Phone</td>
+        <td>Category</td>
+        <td>Created at</td>
+        <td>Modified at</td>
+        <td>Is active</td>
+        <td>actions</td>
+    </tr>
+    <tr *ngFor="let contact of contacts">
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.category }}</td>
+        <td>{{ contact.created_at }}</td>
+        <td>{{ contact.modified_at }}</td>
+        <td>{{ contact.is_active }}</td>
+        <td>
+            <button (click)="editContact(contact.id)">Editar</button>
+            <button (click)="deleteContact(contact.id)">Apagar</button>
+        </td>
+    </tr>
+</table>
