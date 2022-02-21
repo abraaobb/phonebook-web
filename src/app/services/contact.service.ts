@@ -17,9 +17,9 @@ export class ContactService {
         return this.http.post(environment.apiUrl, contact);
     }
     edit(id: any, contact: Contact): Observable<any> {
-        return this.http.put(environment.apiUrl.concat(id), contact);
+        return this.http.put(`${environment.apiUrl}${id}/`, contact);
     }
     delete(id: any) {
-        return this.http.delete(environment.apiUrl.concat(id));
+        return this.http.delete(`${environment.apiUrl}${id}/`);
     }
 }
