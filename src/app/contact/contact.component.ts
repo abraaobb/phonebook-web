@@ -11,6 +11,16 @@ export class ContactComponent implements OnInit {
     contact: Contact = new Contact();
     contacts: Array<any> = new Array();
 
+    displayedColumns: string[] = [
+        'id',
+        'name',
+        'phone',
+        'category',
+        'created_at',
+        'modified_at',
+        'is_active',
+    ];
+
     constructor(private contactService: ContactService) {}
 
     ngOnInit(): void {
